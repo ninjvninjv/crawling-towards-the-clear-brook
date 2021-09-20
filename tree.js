@@ -7,7 +7,7 @@ function Tree() {
   this.leaves = [];
   this.branches = [];
 
-  for (var i = 0; i < 2000; i++) {
+  for (var i = 0; i < 1500; i++) {
     this.leaves.push(new Leaf());
   }
   var pos = createVector(random(width), random(height));
@@ -58,7 +58,6 @@ function Tree() {
 
     for (var i = this.leaves.length - 1; i >= 0; i--) {
       if (this.leaves[i].reached) {
-        this.leaves.splice(i, 1);
       }
     }
 

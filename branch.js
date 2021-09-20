@@ -9,7 +9,23 @@ function Branch(parent, pos, dir) {
   this.dir = dir;
   this.origDir = this.dir.copy();
   this.count = 0;
-  this.len = 20;
+  this.len = 15;
+  this.widthDir = 1;
+  this.width = 1;
+
+  if (this.parent === null){
+    this.width = 1;
+  } else {
+    if (this.parent.width >= 8) {
+      this.widthDir = -1;
+    } else if (this.parent.width <= 1) {
+      this.widthDir = 1;
+      this.width = 1;
+    } else if (this.parent.widthDir === -1) {
+      this.widthDir = -1;
+    }
+    this.width = Math.ceil(this.parent.width + (random(0, 2) * random(0, 1) * this.widthDir));
+  }
 
   this.reset = function() {
     this.dir = this.origDir.copy();
@@ -26,6 +42,7 @@ function Branch(parent, pos, dir) {
   this.show = function() {
     if (parent != null) {
       stroke(0);
+      strokeWeight(this.width);
       line(this.pos.x, this.pos.y, this.parent.pos.x, this.parent.pos.y);
     }
   };

@@ -8,8 +8,8 @@ function Leaf() {
   this.reached = false;
 
   this.show = function() {
-    fill(255);
+    noFill();
     noStroke();
-    ellipse(this.pos.x, this.pos.y, 4, 4);
+    ellipse(this.pos.x, this.pos.y, 1, 1);
   };
 }
