@@ -28,11 +28,11 @@ var ho = today.getHours();
 var min_distEph = 120 - ho * 5;
 var max_distEph = 300;
 
-let videos = ["IMG_0108", "IMG_0233", "IMG_0313", "IMG_0461", "IMG_0462", "IMG_1257", "IMG_1173", "IMG_1375"];
+let videos = ["IMG_010.MOV", "IMG_0233.mp4", "IMG_0313.MOV", "IMG_0461.mp4", "IMG_0462.mp4", "IMG_1257.MOV", "IMG_1173.mp4", "IMG_1375.MOV"];
 var nex = Math.round((7/23)* 4)//ho);
 var hue = 50 + (200/30)* today.getDate();
 var video = document.getElementById('video');
-var newSrc = videos[nex] + ".MOV"
+var newSrc = videos[nex]
 var video = document.getElementById('video');
 video.style.filter = "blur(4px) hue-rotate("+ hue + "deg)";
 video.src = newSrc;
