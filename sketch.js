@@ -1,8 +1,3 @@
-// Coding Rainbow
-// Daniel Shiffman
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/kKT0v3qhIQY
-
 var treeEph;
 var tree;
 var max_dist = 300;
@@ -29,7 +24,7 @@ var min_distEph = 120 - ho * 5;
 var max_distEph = 300;
 
 let videos = ["IMG_010.MOV", "IMG-0233.mp4", "IMG_0313.MOV", "IMG-0461.mp4", "IMG-0462.mp4", "IMG_1257.MOV", "IMG-1173.mp4", "IMG_1375.MOV"];
-var nex = Math.round((7/23)* 4)//ho);
+var nex = Math.round((7/23)* ho);
 var hue = 50 + (200/30)* today.getDate();
 var video = document.getElementById('video');
 var newSrc = videos[nex]
@@ -39,17 +34,18 @@ video.src = newSrc;
 video.play();
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  frameRate(6);
-  treeEph = new TreeEph();
-  tree = new Tree();
+  setTimeout(function(){
+    createCanvas(windowWidth, windowHeight);
+    frameRate(6);
+    treeEph = new TreeEph();
+    tree = new Tree();
+  }, 3000);
 }
 
 function draw() {
+  setTimeout(function(){
   tree.show();
   tree.grow();
   treeEph.grow();
-}
-
-function mouseClicked() {
+}, 4000);
 }
