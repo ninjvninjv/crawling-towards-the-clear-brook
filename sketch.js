@@ -23,15 +23,13 @@ var ho = today.getHours();
 var min_distEph = 120 - ho * 5;
 var max_distEph = 300;
 
-let videos = ["IMG_010.MOV", "IMG-0233.mp4", "IMG_0313.MOV", "IMG-0461.mp4", "IMG-0462.mp4", "IMG_1257.MOV", "IMG-1173.mp4", "IMG_1375.MOV"];
+let videos = ["IMG_0313.gif", "IMG_1257.gif", "IMG-0461.gif", "IMG-0462.gif", "IMG-0937.gif", "IMG_0108.gif", "IMG-1173.gif", "IMG_0108.gif", "IMG-0233.gif"];
 var nex = Math.round((7/23)* ho);
 var hue = 50 + (200/30)* today.getDate();
-var video = document.getElementById('video');
-var newSrc = videos[nex]
+var newSrc = videos[nex];
 var video = document.getElementById('video');
 video.style.filter = "blur(4px) hue-rotate("+ hue + "deg)";
 video.src = newSrc;
-video.play();
 
 function setup() {
   setTimeout(function(){
@@ -47,5 +45,5 @@ function draw() {
   tree.show();
   tree.grow();
   treeEph.grow();
-}, 4000);
+}, 3000);
 }
